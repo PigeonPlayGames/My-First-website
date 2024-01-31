@@ -3,8 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>PigeonPlayGames</title>
+    <title>PigeonPlayGames - Home</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+    <style>
+        #game-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+    <script>
+        let score = 0;
+
+        function increaseScore() {
+            score++;
+            document.getElementById('score').innerText = score;
+        }
+    </script>
 </head>
 <body>
     <nav class="container-fluid">
@@ -12,45 +26,23 @@
             <li><strong>PigeonPlayGames</strong></li>
         </ul>
         <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Games</a></li>
-            <li><a href="#" role="button">Community</a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="games.html">Games</a></li>
+            <li><a href="community.html">Community</a></li>
         </ul>
     </nav>
     <main class="container">
-        <div class="grid">
-            <section>
-                <hgroup>
-                    <h2>Discover Amazing Games</h2>
-                    <h3>Explore. Play. Conquer.</h3>
-                </hgroup>
-                <p>Welcome to PigeonPlayGames - your ultimate gaming destination. Dive into a world of adventure, strategy, and excitement with our exclusive game collection.</p>
-                <figure>
-                    <img src="https://source.unsplash.com/random/800x600?videogame" alt="Gaming Image" />
-                    <figcaption><a href="#" target="_blank">Browse Our Games</a></figcaption>
-                </figure>
-                <h3>Latest Releases</h3>
-                <p>Be the first to play our newest games. Exciting adventures and challenges await you.</p>
-                <h3>Join Our Community</h3>
-                <p>Connect with fellow gamers, share tips, and participate in community events.</p>
-            </section>
+        <h2>Welcome to PigeonPlayGames</h2>
+        <p>Your ultimate destination for amazing gaming experiences.</p>
+
+        <!-- Simple Clicker Game -->
+        <div id="game-container">
+            <h2>Simple Clicker Game</h2>
+            <button onclick="increaseScore()">Click me!</button>
+            <p>Score: <span id="score">0</span></p>
         </div>
     </main>
-    <section aria-label="Subscribe">
-        <div class="container">
-            <article>
-                <hgroup>
-                    <h2>Get Game Updates</h2>
-                    <h3>Subscribe Now</h3>
-                </hgroup>
-                <form class="grid">
-                    <input type="text" id="name" name="name" placeholder="Your Name" aria-label="Your Name" required />
-                    <input type="email" id="email" name="email" placeholder="Your Email" aria-label="Your Email" required />
-                    <button type="submit" onclick="event.preventDefault()">Subscribe</button>
-                </form>
-            </article>
-        </div>
-    </section>
+    <!-- You can add a common footer here -->
     <footer class="container">
         <small><a href="#">Privacy Policy</a> • <a href="#">Terms of Service</a></small>
     </footer>
