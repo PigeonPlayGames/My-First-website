@@ -1,0 +1,33 @@
+/* The navigation bar */
+body {
+  backround-color: #132;
+}
+
+#nav-bar {
+  position: fixed;
+  top: 0; 
+  
+}
+ul {
+  margin: 75px;
+}
+li {
+  display: inline-block;
+  margin: 15px;
+
+}
+@media only screen and (max-width: 600px) {
+  body {
+    background-color: lightblue;
+  }
+}
+
+.flex {
+  display: flex
+
+}
+
+.section {
+  margin: 10;
+}
+
