@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>PigeonPlayGames - Home</title>
+    <title>PigeonPlayGames - Enhanced Clicker Game</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
     <style>
         #game-container {
@@ -26,6 +26,14 @@
             line-height: 30px;
             color: white;
         }
+        .click-effect {
+            animation: clickAnimation 0.5s;
+        }
+        @keyframes clickAnimation {
+            from { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            to { transform: scale(1); }
+        }
     </style>
 </head>
 <body>
@@ -40,8 +48,8 @@
         </ul>
     </nav>
     <main class="container">
-        <h2>Welcome to PigeonPlayGames</h2>
-        <p>Your ultimate destination for amazing gaming experiences.</p>
+        <h2>Welcome to the Enhanced Clicker Game</h2>
+        <p>Click and level up for a better gaming experience.</p>
         
         <!-- Gaming Image -->
         <figure>
@@ -52,8 +60,9 @@
         <!-- Simple Clicker Game -->
         <div id="game-container">
             <h2>Simple Clicker Game</h2>
-            <button onclick="increaseScore()">Click me!</button>
+            <button id="clickButton" onclick="increaseScore()">Click me!</button>
             <p>Score: <span id="score">0</span></p>
+            <p>Level: <span id="level">1</span></p>
             <div id="progressBar">
                 <div id="progressBarFill">0%</div>
             </div>
@@ -75,24 +84,39 @@
 
     <script>
         let score = 0;
+        let level = 1;
 
         function increaseScore() {
-            score++;
+            score += level;
             document.getElementById('score').innerText = score;
+            animateClick();
             updateProgressBar();
-            checkMilestone();
+            checkLevelUp();
+        }
+
+        function animateClick() {
+            let button = document.getElementById('clickButton');
+            button.classList.add('click-effect');
+            setTimeout(() => button.classList.remove('click-effect'), 500);
         }
 
         function updateProgressBar() {
-            let percentage = score % 100;
+            let percentage = (score % 100) * level;
             document.getElementById('progressBarFill').style.width = percentage + '%';
             document.getElementById('progressBarFill').innerText = percentage + '%';
         }
 
-        function checkMilestone() {
+        function checkLevelUp() {
             if (score % 100 === 0 && score !== 0) {
-                alert("Congratulations! You've reached a milestone of " + score + " clicks!");
+                level++;
+                document.getElementById('level').innerText = level;
+                alert("Congratulations! You've reached level " + level + "!");
+                updateGameBackground();
             }
+        }
+
+        function updateGameBackground() {
+            document.body.style.backgroundColor = `hsl(${level * 36}, 60%, 80%)`;
         }
     </script>
 </body>
