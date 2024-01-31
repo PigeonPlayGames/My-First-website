@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>PigeonPlayGames - Home</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
     <style>
@@ -11,15 +10,11 @@
             text-align: center;
             margin-top: 20px;
         }
-    </style>
-    <script>
-        let score = 0;
-
-        function increaseScore() {
-            score++;
-            document.getElementById('score').innerText = score;
+        .music-player {
+            text-align: center;
+            padding: 20px;
         }
-    </script>
+    </style>
 </head>
 <body>
     <nav class="container-fluid">
@@ -48,10 +43,27 @@
             <button onclick="increaseScore()">Click me!</button>
             <p>Score: <span id="score">0</span></p>
         </div>
+
+        <!-- Music Player -->
+        <div class="music-player">
+            <h3>Game Music</h3>
+            <audio controls>
+                <source src="amazinbjmusic.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
     </main>
-    <!-- Common Footer -->
     <footer class="container">
         <small><a href="#">Privacy Policy</a> • <a href="#">Terms of Service</a></small>
     </footer>
+
+    <script>
+        let score = 0;
+
+        function increaseScore() {
+            score++;
+            document.getElementById('score').innerText = score;
+        }
+    </script>
 </body>
 </html>
