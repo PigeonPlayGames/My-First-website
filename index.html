@@ -5,7 +5,7 @@
     <script>
         function checkGuess() {
             var userGuess = document.getElementById('guess').value;
-            var answer = 5; // You can make this a random number
+            var answer = 3; // You can make this a random number
             var result = '';
 
             if (userGuess == answer) {
@@ -20,10 +20,10 @@
 </head>
 <body>
     <h1>Guess the Number Game</h1>
+    <img src="pigeonplaygames.jpeg" alt="Pigeon Playing Games"> <!-- Image of a pigeon playing games -->
     <p>I'm thinking of a number between 1 and 10. Can you guess it?</p>
     <input type="number" id="guess">
     <button onclick="checkGuess()">Guess</button>
     <p id="result"></p>
 </body>
 </html>
-
