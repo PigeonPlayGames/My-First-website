@@ -1,29 +1,58 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Guess the Number Game</title>
-    <script>
-        function checkGuess() {
-            var userGuess = document.getElementById('guess').value;
-            var answer = 5; // You can make this a random number
-            var result = '';
-
-            if (userGuess == answer) {
-                result = 'Congratulations! You guessed correctly.';
-            } else {
-                result = 'Sorry, that is not correct. Try again.';
-            }
-
-            document.getElementById('result').innerHTML = result;
-        }
-    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PigeonPlayGames</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
 </head>
 <body>
-    <h1>Guess the Number Game</h1>
-    <img src="pigeonplaygames.jpeg" alt="Pigeon Playing Games"> <!-- Image of a pigeon playing games -->
-    <p>I'm thinking of a number between 1 and 10. Can you guess it?</p>
-    <input type="number" id="guess">
-    <button onclick="checkGuess()">Guess</button>
-    <p id="result"></p>
+    <nav class="container-fluid">
+        <ul>
+            <li><strong>PigeonPlayGames</strong></li>
+        </ul>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Games</a></li>
+            <li><a href="#" role="button">Community</a></li>
+        </ul>
+    </nav>
+    <main class="container">
+        <div class="grid">
+            <section>
+                <hgroup>
+                    <h2>Discover Amazing Games</h2>
+                    <h3>Explore. Play. Conquer.</h3>
+                </hgroup>
+                <p>Welcome to PigeonPlayGames - your ultimate gaming destination. Dive into a world of adventure, strategy, and excitement with our exclusive game collection.</p>
+                <figure>
+                    <img src="https://source.unsplash.com/random/800x600?videogame" alt="Gaming Image" />
+                    <figcaption><a href="#" target="_blank">Browse Our Games</a></figcaption>
+                </figure>
+                <h3>Latest Releases</h3>
+                <p>Be the first to play our newest games. Exciting adventures and challenges await you.</p>
+                <h3>Join Our Community</h3>
+                <p>Connect with fellow gamers, share tips, and participate in community events.</p>
+            </section>
+        </div>
+    </main>
+    <section aria-label="Subscribe">
+        <div class="container">
+            <article>
+                <hgroup>
+                    <h2>Get Game Updates</h2>
+                    <h3>Subscribe Now</h3>
+                </hgroup>
+                <form class="grid">
+                    <input type="text" id="name" name="name" placeholder="Your Name" aria-label="Your Name" required />
+                    <input type="email" id="email" name="email" placeholder="Your Email" aria-label="Your Email" required />
+                    <button type="submit" onclick="event.preventDefault()">Subscribe</button>
+                </form>
+            </article>
+        </div>
+    </section>
+    <footer class="container">
+        <small><a href="#">Privacy Policy</a> • <a href="#">Terms of Service</a></small>
+    </footer>
 </body>
 </html>
