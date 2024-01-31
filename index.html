@@ -1,38 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
- <link rel="style-sheet" href="styles.css">
+<html>
+<head>
+    <title>Guess the Number Game</title>
+    <script>
+        function checkGuess() {
+            var userGuess = document.getElementById('guess').value;
+            var answer = 5; // You can make this a random number
+            var result = '';
+
+            if (userGuess == answer) {
+                result = 'Congratulations! You guessed correctly.';
+            } else {
+                result = 'Sorry, that is not correct. Try again.';
+            }
+
+            document.getElementById('result').innerHTML = result;
+        }
+    </script>
+</head>
 <body>
-  
-  <header id="header">
-    <img id="header-img" width="100" src="https://raw.githubusercontent.com/pigeonplaygames/repository/My-First-website/pigeonplaygames1.jpeg" alt="Pigeon Play Game">
-    </img>
-    <nav id="nav-bar">
-      <ul>
-        <li>
-         <a class="nav-link" rel="page-one" href="#section-1">Decks</a>
-         </li>
-        <li>
-         <a class="nav-link" rel="page-two" href="#section-2">Trucks</a>
-         </li>
-        <li>
-         <a class="nav-link" rel="page-three" href="#section-3">Wheels</a>
-         </li>
-
-<page-one href="google.com">
-
-        </ul>
-    </nav>
-
-</header>
-<div class="flex"></div>
-  <div id="section-1" class="section"></div>
-  <div id="section-2" class="section"></div>
-  <div id="section-3" class="section"></div>
-</div>
-<iframe width="560" height="315" id="video" src="https://www.youtube.com/embed/jYawN4NVrdA?si=FCkpODWr339HOUPq" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-<form id="form" action="https://www.freecodecamp.com/email-submit">
-  <input id="email" placeholder="email" type="email" name="email"></input>
-  <input type="submit" id="submit"></input>
-  </form>
+    <h1>Guess the Number Game</h1>
+    <p>I'm thinking of a number between 1 and 10. Can you guess it?</p>
+    <input type="number" id="guess">
+    <button onclick="checkGuess()">Guess</button>
+    <p id="result"></p>
 </body>
- </html>
+</html>
+
