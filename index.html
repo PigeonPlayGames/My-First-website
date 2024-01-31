@@ -14,6 +14,18 @@
             text-align: center;
             padding: 20px;
         }
+        #progressBar {
+            width: 100%;
+            background-color: #ddd;
+        }
+        #progressBarFill {
+            height: 30px;
+            width: 0%;
+            background-color: #4CAF50;
+            text-align: center;
+            line-height: 30px;
+            color: white;
+        }
     </style>
 </head>
 <body>
@@ -42,17 +54,19 @@
             <h2>Simple Clicker Game</h2>
             <button onclick="increaseScore()">Click me!</button>
             <p>Score: <span id="score">0</span></p>
+            <div id="progressBar">
+                <div id="progressBarFill">0%</div>
+            </div>
         </div>
 
         <!-- Music Player -->
-       <!-- Music Player -->
-<div class="music-player">
-    <h3>Game Music</h3>
-    <audio controls>
-        <source src="https://raw.githubusercontent.com/pigeonplaygames/My-First-website/branch/audio/amazinbjmusic.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
-    </audio>
-</div>
+        <div class="music-player">
+            <h3>Game Music</h3>
+            <audio controls>
+                <source src="https://raw.githubusercontent.com/pigeonplaygames/My-First-website/branch/audio/amazinbjmusic.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
 
     </main>
     <footer class="container">
@@ -65,6 +79,20 @@
         function increaseScore() {
             score++;
             document.getElementById('score').innerText = score;
+            updateProgressBar();
+            checkMilestone();
+        }
+
+        function updateProgressBar() {
+            let percentage = score % 100;
+            document.getElementById('progressBarFill').style.width = percentage + '%';
+            document.getElementById('progressBarFill').innerText = percentage + '%';
+        }
+
+        function checkMilestone() {
+            if (score % 100 === 0 && score !== 0) {
+                alert("Congratulations! You've reached a milestone of " + score + " clicks!");
+            }
         }
     </script>
 </body>
